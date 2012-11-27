@@ -4,6 +4,9 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
+			<th><?php echo $this->Paginator->sort('client_visible');?></th>
+			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -11,6 +14,9 @@
 	<tr>
 		<td><?php echo h($projectAttribute['ProjectAttribute']['id']); ?>&nbsp;</td>
 		<td><?php echo h($projectAttribute['ProjectAttribute']['name']); ?>&nbsp;</td>
+		<td><?php echo h($projectAttribute['ProjectAttribute']['client_visible']); ?>&nbsp;</td>
+		<td><?php echo h($projectAttribute['ProjectAttribute']['created']); ?>&nbsp;</td>
+		<td><?php echo h($projectAttribute['ProjectAttribute']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $projectAttribute['ProjectAttribute']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $projectAttribute['ProjectAttribute']['id'])); ?>

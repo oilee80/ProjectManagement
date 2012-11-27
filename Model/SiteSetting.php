@@ -6,21 +6,17 @@ App::uses('AppModel', 'Model');
  */
 class SiteSetting extends AppModel {
 /**
+ * Primary key field
+ *
+ * @var string
+ */
+	public $primaryKey = 'name';
+/**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'name' => array(
-			'uuid' => array(
-				'rule' => array('uuid'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'description' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),

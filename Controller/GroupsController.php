@@ -47,8 +47,6 @@ class GroupsController extends AppController {
 				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
 			}
 		}
-		$types = $this->Group->Type->find('list');
-		$this->set(compact('types'));
 	}
 
 /**
@@ -72,8 +70,6 @@ class GroupsController extends AppController {
 		} else {
 			$this->request->data = $this->Group->read(null, $id);
 		}
-		$types = $this->Group->Type->find('list');
-		$this->set(compact('types'));
 	}
 
 /**

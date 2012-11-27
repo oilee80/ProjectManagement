@@ -4,7 +4,7 @@ App::uses('AppModel', 'Model');
  * User Model
  *
  * @property Group $Group
- * @property ProjectTime $ProjectTime
+ * @property ProjectActivity $ProjectActivity
  * @property UserSetting $UserSetting
  * @property UserAttribute $UserAttribute
  */
@@ -70,8 +70,8 @@ class User extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'ProjectTime' => array(
-			'className' => 'ProjectTime',
+		'ProjectActivity' => array(
+			'className' => 'ProjectActivity',
 			'foreignKey' => 'user_id',
 			'dependent' => false,
 			'conditions' => '',

@@ -4,6 +4,9 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
+			<th><?php echo $this->Paginator->sort('support_time_per_month');?></th>
+			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -11,6 +14,9 @@
 	<tr>
 		<td><?php echo h($client['Client']['id']); ?>&nbsp;</td>
 		<td><?php echo h($client['Client']['name']); ?>&nbsp;</td>
+		<td><?php echo h($client['Client']['support_time_per_month']); ?>&nbsp;</td>
+		<td><?php echo h($client['Client']['created']); ?>&nbsp;</td>
+		<td><?php echo h($client['Client']['modified']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $client['Client']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $client['Client']['id'])); ?>

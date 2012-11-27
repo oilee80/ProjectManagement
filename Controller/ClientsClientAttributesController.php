@@ -47,9 +47,6 @@ class ClientsClientAttributesController extends AppController {
 				$this->Session->setFlash(__('The clients client attribute could not be saved. Please, try again.'));
 			}
 		}
-		$clientAttributes = $this->ClientsClientAttribute->ClientAttribute->find('list');
-		$clients = $this->ClientsClientAttribute->Client->find('list');
-		$this->set(compact('clientAttributes', 'clients'));
 	}
 
 /**
@@ -73,9 +70,6 @@ class ClientsClientAttributesController extends AppController {
 		} else {
 			$this->request->data = $this->ClientsClientAttribute->read(null, $id);
 		}
-		$clientAttributes = $this->ClientsClientAttribute->ClientAttribute->find('list');
-		$clients = $this->ClientsClientAttribute->Client->find('list');
-		$this->set(compact('clientAttributes', 'clients'));
 	}
 
 /**

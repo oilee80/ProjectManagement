@@ -47,9 +47,6 @@ class UsersUserAttributesController extends AppController {
 				$this->Session->setFlash(__('The users user attribute could not be saved. Please, try again.'));
 			}
 		}
-		$userAttributes = $this->UsersUserAttribute->UserAttribute->find('list');
-		$users = $this->UsersUserAttribute->User->find('list');
-		$this->set(compact('userAttributes', 'users'));
 	}
 
 /**
@@ -73,9 +70,6 @@ class UsersUserAttributesController extends AppController {
 		} else {
 			$this->request->data = $this->UsersUserAttribute->read(null, $id);
 		}
-		$userAttributes = $this->UsersUserAttribute->UserAttribute->find('list');
-		$users = $this->UsersUserAttribute->User->find('list');
-		$this->set(compact('userAttributes', 'users'));
 	}
 
 /**

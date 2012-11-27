@@ -14,10 +14,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('ClientsClientAttribute.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('ClientsClientAttribute.id'))); ?></li>
+		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('ClientsClientAttribute.client_attributes_id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('ClientsClientAttribute.client_attributes_id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Clients Client Attributes'), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Client Attributes'), array('controller' => 'client_attributes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Client Attributes'), array('controller' => 'client_attributes', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Clients'), array('controller' => 'clients', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Clients'), array('controller' => 'clients', 'action' => 'add')); ?> </li>
 	</ul>

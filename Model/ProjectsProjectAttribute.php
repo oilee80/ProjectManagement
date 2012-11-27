@@ -3,26 +3,21 @@ App::uses('AppModel', 'Model');
 /**
  * ProjectsProjectAttribute Model
  *
- * @property ProjectAttributes $ProjectAttributes
  * @property Projects $Projects
  */
 class ProjectsProjectAttribute extends AppModel {
+/**
+ * Primary key field
+ *
+ * @var string
+ */
+	public $primaryKey = 'project_attributes_id';
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'project_attributes_id' => array(
-			'uuid' => array(
-				'rule' => array('uuid'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'projects_id' => array(
 			'uuid' => array(
 				'rule' => array('uuid'),
@@ -53,13 +48,6 @@ class ProjectsProjectAttribute extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'ProjectAttributes' => array(
-			'className' => 'ProjectAttributes',
-			'foreignKey' => 'project_attributes_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'Projects' => array(
 			'className' => 'Projects',
 			'foreignKey' => 'projects_id',

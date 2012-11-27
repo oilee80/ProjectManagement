@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
+		echo $this->Form->input('support_time_per_month');
 		echo $this->Form->input('ClientAttribute');
 	?>
 	</fieldset>

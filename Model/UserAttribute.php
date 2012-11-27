@@ -6,11 +6,6 @@ App::uses('AppModel', 'Model');
  * @property User $User
  */
 class UserAttribute extends AppModel {
-
-	public $actsAs = array(
-		'type' => array('enum' => array('text', 'select', 'multi select'))
-	);
-
 /**
  * Validation rules
  *
@@ -19,12 +14,12 @@ class UserAttribute extends AppModel {
 	public $validate = array(
 		'name' => array(
 			'notempty' => array(
-				'rule' => array('notempty')
-			),
-		),
-		'type' => array(
-			'notempty' => array(
-				'rule' => array('notempty')
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
 	);

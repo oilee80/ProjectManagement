@@ -42,8 +42,8 @@
 		<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Project Times'), array('controller' => 'project_times', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project Time'), array('controller' => 'project_times', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Project Activities'), array('controller' => 'project_activities', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Project Activity'), array('controller' => 'project_activities', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List User Settings'), array('controller' => 'user_settings', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User Setting'), array('controller' => 'user_settings', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List User Attributes'), array('controller' => 'user_attributes', 'action' => 'index')); ?> </li>
@@ -51,36 +51,40 @@
 	</ul>
 </div>
 <div class="related">
-	<h3><?php echo __('Related Project Times');?></h3>
-	<?php if (!empty($user['ProjectTime'])):?>
+	<h3><?php echo __('Related Project Activities');?></h3>
+	<?php if (!empty($user['ProjectActivity'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Activity Id'); ?></th>
 		<th><?php echo __('Title'); ?></th>
 		<th><?php echo __('Description'); ?></th>
 		<th><?php echo __('Time Spent'); ?></th>
 		<th><?php echo __('User Id'); ?></th>
 		<th><?php echo __('Project Id'); ?></th>
+		<th><?php echo __('Billable'); ?></th>
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($user['ProjectTime'] as $projectTime): ?>
+		foreach ($user['ProjectActivity'] as $projectActivity): ?>
 		<tr>
-			<td><?php echo $projectTime['id'];?></td>
-			<td><?php echo $projectTime['title'];?></td>
-			<td><?php echo $projectTime['description'];?></td>
-			<td><?php echo $projectTime['time_spent'];?></td>
-			<td><?php echo $projectTime['user_id'];?></td>
-			<td><?php echo $projectTime['project_id'];?></td>
-			<td><?php echo $projectTime['created'];?></td>
-			<td><?php echo $projectTime['modified'];?></td>
+			<td><?php echo $projectActivity['id'];?></td>
+			<td><?php echo $projectActivity['activity_id'];?></td>
+			<td><?php echo $projectActivity['title'];?></td>
+			<td><?php echo $projectActivity['description'];?></td>
+			<td><?php echo $projectActivity['time_spent'];?></td>
+			<td><?php echo $projectActivity['user_id'];?></td>
+			<td><?php echo $projectActivity['project_id'];?></td>
+			<td><?php echo $projectActivity['billable'];?></td>
+			<td><?php echo $projectActivity['created'];?></td>
+			<td><?php echo $projectActivity['modified'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'project_times', 'action' => 'view', $projectTime['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'project_times', 'action' => 'edit', $projectTime['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'project_times', 'action' => 'delete', $projectTime['id']), null, __('Are you sure you want to delete # %s?', $projectTime['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'project_activities', 'action' => 'view', $projectActivity['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'project_activities', 'action' => 'edit', $projectActivity['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'project_activities', 'action' => 'delete', $projectActivity['id']), null, __('Are you sure you want to delete # %s?', $projectActivity['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -89,7 +93,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Project Time'), array('controller' => 'project_times', 'action' => 'add'));?> </li>
+			<li><?php echo $this->Html->link(__('New Project Activity'), array('controller' => 'project_activities', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>
@@ -115,9 +119,9 @@
 			<td><?php echo $userSetting['created'];?></td>
 			<td><?php echo $userSetting['modified'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'user_settings', 'action' => 'view', $userSetting['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'user_settings', 'action' => 'edit', $userSetting['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'user_settings', 'action' => 'delete', $userSetting['id']), null, __('Are you sure you want to delete # %s?', $userSetting['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'user_settings', 'action' => 'view', $userSetting['user_id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'user_settings', 'action' => 'edit', $userSetting['user_id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'user_settings', 'action' => 'delete', $userSetting['user_id']), null, __('Are you sure you want to delete # %s?', $userSetting['user_id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -137,6 +141,8 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -145,6 +151,8 @@
 		<tr>
 			<td><?php echo $userAttribute['id'];?></td>
 			<td><?php echo $userAttribute['name'];?></td>
+			<td><?php echo $userAttribute['created'];?></td>
+			<td><?php echo $userAttribute['modified'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'user_attributes', 'action' => 'view', $userAttribute['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'user_attributes', 'action' => 'edit', $userAttribute['id'])); ?>

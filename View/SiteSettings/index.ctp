@@ -18,9 +18,9 @@
 		<td><?php echo h($siteSetting['SiteSetting']['created']); ?>&nbsp;</td>
 		<td><?php echo h($siteSetting['SiteSetting']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $siteSetting['SiteSetting']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $siteSetting['SiteSetting']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $siteSetting['SiteSetting']['id']), null, __('Are you sure you want to delete # %s?', $siteSetting['SiteSetting']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $siteSetting['SiteSetting']['name'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $siteSetting['SiteSetting']['name'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $siteSetting['SiteSetting']['name']), null, __('Are you sure you want to delete # %s?', $siteSetting['SiteSetting']['name'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

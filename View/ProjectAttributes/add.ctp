@@ -4,6 +4,7 @@
 		<legend><?php echo __('Add Project Attribute'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
+		echo $this->Form->input('client_visible');
 		echo $this->Form->input('Project');
 	?>
 	</fieldset>

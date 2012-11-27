@@ -3,7 +3,6 @@
 	<fieldset>
 		<legend><?php echo __('Add Site Setting'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
 		echo $this->Form->input('description');
 		echo $this->Form->input('value');
 	?>

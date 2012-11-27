@@ -6,7 +6,7 @@ App::uses('AppModel', 'Model');
  * @property Client $Client
  * @property Project $ParentProject
  * @property Comment $Comment
- * @property ProjectTime $ProjectTime
+ * @property ProjectActivity $ProjectActivity
  * @property Project $ChildProject
  * @property ProjectAttribute $ProjectAttribute
  */
@@ -82,8 +82,8 @@ class Project extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'ProjectTime' => array(
-			'className' => 'ProjectTime',
+		'ProjectActivity' => array(
+			'className' => 'ProjectActivity',
 			'foreignKey' => 'project_id',
 			'dependent' => false,
 			'conditions' => '',

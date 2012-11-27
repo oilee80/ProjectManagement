@@ -31,8 +31,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Site Setting'), array('action' => 'edit', $siteSetting['SiteSetting']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Site Setting'), array('action' => 'delete', $siteSetting['SiteSetting']['id']), null, __('Are you sure you want to delete # %s?', $siteSetting['SiteSetting']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit Site Setting'), array('action' => 'edit', $siteSetting['SiteSetting']['name'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Site Setting'), array('action' => 'delete', $siteSetting['SiteSetting']['name']), null, __('Are you sure you want to delete # %s?', $siteSetting['SiteSetting']['name'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Site Settings'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Site Setting'), array('action' => 'add')); ?> </li>
 	</ul>

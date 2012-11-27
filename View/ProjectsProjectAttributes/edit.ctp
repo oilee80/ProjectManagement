@@ -14,10 +14,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('ProjectsProjectAttribute.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('ProjectsProjectAttribute.id'))); ?></li>
+		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('ProjectsProjectAttribute.project_attributes_id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('ProjectsProjectAttribute.project_attributes_id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Projects Project Attributes'), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Project Attributes'), array('controller' => 'project_attributes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project Attributes'), array('controller' => 'project_attributes', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Projects'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
 	</ul>

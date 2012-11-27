@@ -11,6 +11,21 @@
 			<?php echo h($client['Client']['name']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Support Time Per Month'); ?></dt>
+		<dd>
+			<?php echo h($client['Client']['support_time_per_month']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Created'); ?></dt>
+		<dd>
+			<?php echo h($client['Client']['created']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Modified'); ?></dt>
+		<dd>
+			<?php echo h($client['Client']['modified']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

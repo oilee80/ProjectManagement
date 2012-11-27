@@ -12,9 +12,7 @@
 	<?php
 	foreach ($projectsProjectAttributes as $projectsProjectAttribute): ?>
 	<tr>
-		<td>
-			<?php echo $this->Html->link($projectsProjectAttribute['ProjectAttributes']['name'], array('controller' => 'project_attributes', 'action' => 'view', $projectsProjectAttribute['ProjectAttributes']['id'])); ?>
-		</td>
+		<td><?php echo h($projectsProjectAttribute['ProjectsProjectAttribute']['project_attributes_id']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($projectsProjectAttribute['Projects']['name'], array('controller' => 'projects', 'action' => 'view', $projectsProjectAttribute['Projects']['id'])); ?>
 		</td>
@@ -22,9 +20,9 @@
 		<td><?php echo h($projectsProjectAttribute['ProjectsProjectAttribute']['created']); ?>&nbsp;</td>
 		<td><?php echo h($projectsProjectAttribute['ProjectsProjectAttribute']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $projectsProjectAttribute['ProjectsProjectAttribute']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $projectsProjectAttribute['ProjectsProjectAttribute']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $projectsProjectAttribute['ProjectsProjectAttribute']['id']), null, __('Are you sure you want to delete # %s?', $projectsProjectAttribute['ProjectsProjectAttribute']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $projectsProjectAttribute['ProjectsProjectAttribute']['project_attributes_id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $projectsProjectAttribute['ProjectsProjectAttribute']['project_attributes_id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $projectsProjectAttribute['ProjectsProjectAttribute']['project_attributes_id']), null, __('Are you sure you want to delete # %s?', $projectsProjectAttribute['ProjectsProjectAttribute']['project_attributes_id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -48,8 +46,6 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Projects Project Attribute'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Project Attributes'), array('controller' => 'project_attributes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project Attributes'), array('controller' => 'project_attributes', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Projects'), array('controller' => 'projects', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Projects'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
 	</ul>

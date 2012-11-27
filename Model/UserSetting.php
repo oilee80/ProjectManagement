@@ -3,26 +3,21 @@ App::uses('AppModel', 'Model');
 /**
  * UserSetting Model
  *
- * @property User $User
  * @property Setting $Setting
  */
 class UserSetting extends AppModel {
+/**
+ * Primary key field
+ *
+ * @var string
+ */
+	public $primaryKey = 'user_id';
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'user_id' => array(
-			'uuid' => array(
-				'rule' => array('uuid'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'setting_id' => array(
 			'uuid' => array(
 				'rule' => array('uuid'),
@@ -53,15 +48,8 @@ class UserSetting extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Setting' => array(
-			'className' => 'Setting',
+		'DefaultSetting' => array(
+			'className' => 'DefaultSetting',
 			'foreignKey' => 'setting_id',
 			'conditions' => '',
 			'fields' => '',

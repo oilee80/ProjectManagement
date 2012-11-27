@@ -47,9 +47,8 @@ class UserSettingsController extends AppController {
 				$this->Session->setFlash(__('The user setting could not be saved. Please, try again.'));
 			}
 		}
-		$users = $this->UserSetting->User->find('list');
 		$settings = $this->UserSetting->Setting->find('list');
-		$this->set(compact('users', 'settings'));
+		$this->set(compact('settings'));
 	}
 
 /**
@@ -73,9 +72,8 @@ class UserSettingsController extends AppController {
 		} else {
 			$this->request->data = $this->UserSetting->read(null, $id);
 		}
-		$users = $this->UserSetting->User->find('list');
 		$settings = $this->UserSetting->Setting->find('list');
-		$this->set(compact('users', 'settings'));
+		$this->set(compact('settings'));
 	}
 
 /**

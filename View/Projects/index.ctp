@@ -56,8 +56,8 @@
 		<li><?php echo $this->Html->link(__('New Parent Project'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Comments'), array('controller' => 'comments', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Comment'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Project Times'), array('controller' => 'project_times', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project Time'), array('controller' => 'project_times', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Project Activities'), array('controller' => 'project_activities', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Project Activity'), array('controller' => 'project_activities', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Project Attributes'), array('controller' => 'project_attributes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Project Attribute'), array('controller' => 'project_attributes', 'action' => 'add')); ?> </li>
 	</ul>

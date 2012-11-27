@@ -4,6 +4,7 @@
 		<legend><?php echo __('Add Client'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
+		echo $this->Form->input('support_time_per_month', array('timeFormat' => 24, 'interval' => 15, 'default' => '00:00:00'));
 		echo $this->Form->input('ClientAttribute');
 	?>
 	</fieldset>

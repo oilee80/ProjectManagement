@@ -46,8 +46,8 @@
 		<li><?php echo $this->Html->link(__('New Parent Project'), array('controller' => 'projects', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Comments'), array('controller' => 'comments', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Comment'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Project Times'), array('controller' => 'project_times', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Project Time'), array('controller' => 'project_times', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Project Activities'), array('controller' => 'project_activities', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Project Activity'), array('controller' => 'project_activities', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Project Attributes'), array('controller' => 'project_attributes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Project Attribute'), array('controller' => 'project_attributes', 'action' => 'add')); ?> </li>
 	</ul>
@@ -94,36 +94,40 @@
 	</div>
 </div>
 <div class="related">
-	<h3><?php echo __('Related Project Times');?></h3>
-	<?php if (!empty($project['ProjectTime'])):?>
+	<h3><?php echo __('Related Project Activities');?></h3>
+	<?php if (!empty($project['ProjectActivity'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
+		<th><?php echo __('Activity Id'); ?></th>
 		<th><?php echo __('Title'); ?></th>
 		<th><?php echo __('Description'); ?></th>
 		<th><?php echo __('Time Spent'); ?></th>
 		<th><?php echo __('User Id'); ?></th>
 		<th><?php echo __('Project Id'); ?></th>
+		<th><?php echo __('Billable'); ?></th>
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($project['ProjectTime'] as $projectTime): ?>
+		foreach ($project['ProjectActivity'] as $projectActivity): ?>
 		<tr>
-			<td><?php echo $projectTime['id'];?></td>
-			<td><?php echo $projectTime['title'];?></td>
-			<td><?php echo $projectTime['description'];?></td>
-			<td><?php echo $projectTime['time_spent'];?></td>
-			<td><?php echo $projectTime['user_id'];?></td>
-			<td><?php echo $projectTime['project_id'];?></td>
-			<td><?php echo $projectTime['created'];?></td>
-			<td><?php echo $projectTime['modified'];?></td>
+			<td><?php echo $projectActivity['id'];?></td>
+			<td><?php echo $projectActivity['activity_id'];?></td>
+			<td><?php echo $projectActivity['title'];?></td>
+			<td><?php echo $projectActivity['description'];?></td>
+			<td><?php echo $projectActivity['time_spent'];?></td>
+			<td><?php echo $projectActivity['user_id'];?></td>
+			<td><?php echo $projectActivity['project_id'];?></td>
+			<td><?php echo $projectActivity['billable'];?></td>
+			<td><?php echo $projectActivity['created'];?></td>
+			<td><?php echo $projectActivity['modified'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'project_times', 'action' => 'view', $projectTime['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'project_times', 'action' => 'edit', $projectTime['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'project_times', 'action' => 'delete', $projectTime['id']), null, __('Are you sure you want to delete # %s?', $projectTime['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'project_activities', 'action' => 'view', $projectActivity['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'project_activities', 'action' => 'edit', $projectActivity['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'project_activities', 'action' => 'delete', $projectActivity['id']), null, __('Are you sure you want to delete # %s?', $projectActivity['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -132,7 +136,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Project Time'), array('controller' => 'project_times', 'action' => 'add'));?> </li>
+			<li><?php echo $this->Html->link(__('New Project Activity'), array('controller' => 'project_activities', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>
@@ -182,6 +186,9 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Client Visible'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -190,6 +197,9 @@
 		<tr>
 			<td><?php echo $projectAttribute['id'];?></td>
 			<td><?php echo $projectAttribute['name'];?></td>
+			<td><?php echo $projectAttribute['client_visible'];?></td>
+			<td><?php echo $projectAttribute['created'];?></td>
+			<td><?php echo $projectAttribute['modified'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'project_attributes', 'action' => 'view', $projectAttribute['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'project_attributes', 'action' => 'edit', $projectAttribute['id'])); ?>

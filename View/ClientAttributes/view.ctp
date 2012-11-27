@@ -31,6 +31,9 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Support Time Per Month'); ?></th>
+		<th><?php echo __('Created'); ?></th>
+		<th><?php echo __('Modified'); ?></th>
 		<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -39,6 +42,9 @@
 		<tr>
 			<td><?php echo $client['id'];?></td>
 			<td><?php echo $client['name'];?></td>
+			<td><?php echo $client['support_time_per_month'];?></td>
+			<td><?php echo $client['created'];?></td>
+			<td><?php echo $client['modified'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'clients', 'action' => 'view', $client['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'clients', 'action' => 'edit', $client['id'])); ?>

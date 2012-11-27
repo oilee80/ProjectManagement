@@ -47,6 +47,8 @@ class CommentsController extends AppController {
 				$this->Session->setFlash(__('The comment could not be saved. Please, try again.'));
 			}
 		}
+		$projects = $this->Comment->Project->find('list');
+		$this->set(compact('projects'));
 	}
 
 /**
@@ -70,6 +72,8 @@ class CommentsController extends AppController {
 		} else {
 			$this->request->data = $this->Comment->read(null, $id);
 		}
+		$projects = $this->Comment->Project->find('list');
+		$this->set(compact('projects'));
 	}
 
 /**

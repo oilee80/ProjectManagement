@@ -47,9 +47,6 @@ class ProjectsProjectAttributesController extends AppController {
 				$this->Session->setFlash(__('The projects project attribute could not be saved. Please, try again.'));
 			}
 		}
-		$projectAttributes = $this->ProjectsProjectAttribute->ProjectAttribute->find('list');
-		$projects = $this->ProjectsProjectAttribute->Project->find('list');
-		$this->set(compact('projectAttributes', 'projects'));
 	}
 
 /**
@@ -73,9 +70,6 @@ class ProjectsProjectAttributesController extends AppController {
 		} else {
 			$this->request->data = $this->ProjectsProjectAttribute->read(null, $id);
 		}
-		$projectAttributes = $this->ProjectsProjectAttribute->ProjectAttribute->find('list');
-		$projects = $this->ProjectsProjectAttribute->Project->find('list');
-		$this->set(compact('projectAttributes', 'projects'));
 	}
 
 /**
